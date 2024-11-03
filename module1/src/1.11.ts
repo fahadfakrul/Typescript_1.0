@@ -1,4 +1,5 @@
 {
+//
     // ternary operator 
     const age: number = 15;
 
@@ -36,5 +37,5 @@
     const  permanentAddress = user?.address?.permanentAddress ?? "No address";
     console.log({permanentAddress}); // Output: 123 Main St
 
-    
+//    
 }
