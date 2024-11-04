@@ -15,7 +15,6 @@
     const result2 = add('10', '20');
     console.log(result1); //30
     console.log(result2); //1020
-
     //in guard
 
    type NormalUser  = {
@@ -33,7 +32,7 @@
         console.log(`My name is ${user.name}`);
     }
    }
-
+    
    const normalUser : NormalUser = {
     name: "Mr. Normal Bhai",
    }
