@@ -10,7 +10,11 @@ const mentors : GenericArray<string> = ["A", "B", "C", "D", "E", "F"]
 
 // const boolArray: boolean[] = [true, false, false, false, false]
 const boolArray: GenericArray<boolean> = [true, false, false, false, false]
-//
+
+interface User {
+    name: string;
+    age: number;
+}
 
 const user : GenericArray<{name: string; age: number}> = [
     {
@@ -34,5 +38,5 @@ const UserWithId : GenericTuple<number,{name:string, email: string}> = [1234, {n
 const add = (x: number, y: number) => x + y;
 
 add(30 , 290)
-
+//
 }
