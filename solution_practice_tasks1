@@ -1,0 +1,147 @@
+// Task 1
+console.log("Hello World, I will complete this course successfully and become a Next level Web Developer!");
+
+// Task 2
+function displayUser(name: string, age: number, role: 'admin' | 'user' | 'guest' = 'user'): void {
+    console.log(`Name: ${name}, Age: ${age}, Role: ${role}`);
+}
+displayUser("Alice", 30, 'admin');
+
+// Task 3
+type Person = {
+    name: string;
+    address: string;
+    hairColor: string;
+    eyeColor: string;
+    income: number;
+    expense: number;
+    hobbies: string[];
+    familyMembers: string[];
+    job: string;
+    skills: string[];
+    maritalStatus: string;
+    friends: string[];
+};
+
+// Task 4
+interface Book {
+    title: string;
+    author: string;
+    pages: number;
+}
+
+interface Magazine {
+    title: string;
+    publisher: string;
+    issuesPerYear: number;
+}
+
+// Union type
+type PrintMaterial = Book | Magazine;
+
+// Intersection type
+type BookMagazine = Book & Magazine;
+
+
+// Task 5
+function reverseString(input: string): string {
+    return input.split("").reverse().join("");
+}
+console.log(reverseString("hello")); // Output: "olleh"
+
+// Task 6
+function sum(...numbers: number[]): number {
+    return numbers.reduce((total, num) => total + num, 0);
+}
+console.log(sum(1, 2, 3, 4, 5)); // Output: 15
+
+// Task 7
+function processInput(input: string | number): number {
+    if (typeof input === "string") {
+        return input.length;
+    } else {
+        return input * input;
+    }
+}
+console.log(processInput("hello")); // Output: 5
+console.log(processInput(5)); // Output: 25
+
+// Task 8
+type User = {
+    name: string;
+    email: string;
+};
+
+type Admin = {
+    adminLevel: number;
+};
+
+type AdminUser = User & Admin;
+
+function describeAdmin(user: AdminUser): string {
+    return `Admin ${user.name} with level ${user.adminLevel} can be reached at ${user.email}`;
+}
+
+// Task 9
+function getEmployeeCity(employee: { address?: { city?: string } }): string | undefined {
+    return employee.address?.city;
+}
+
+// Task 10
+function getDisplayName(name: string | null | undefined): string {
+    return name ?? "Anonymous";
+}
+
+// Task 11
+function processData(data: unknown): string | number | undefined {
+    if (typeof data === "string") {
+        return data.toUpperCase();
+    } else if (typeof data === "number") {
+        return data * data;
+    }
+}
+
+// Task 12
+function handleError(message: string): never {
+    throw new Error(message);
+}
+
+// Task 13
+function removeDuplicates<T>(array: T[]): T[] {
+    return Array.from(new Set(array));
+}
+console.log(removeDuplicates([1, 2, 2, 3, 4, 4])); // Output: [1, 2, 3, 4]
+
+// Task 14
+async function fetchUserData(): Promise<{ name: string; age: number }> {
+    return new Promise((resolve) => {
+        setTimeout(() => {
+            resolve({ name: "Alice", age: 25 });
+        }, 1000);
+    });
+}
+
+// Task 15
+function isString(value: unknown): value is string {
+    return typeof value === "string";
+}
+
+function printUpperCase(value: unknown): void {
+    if (isString(value)) {
+        console.log(value.toUpperCase());
+    }
+}
+
+// Task 16
+function getProperty<T, K extends keyof T>(obj: T, key: K): T[K] {
+    return obj[key];
+}
+
+const user = { name: "Alice", age: 25 };
+console.log(getProperty(user, "name")); // Output: Alice
+
+
+
+
+
+
